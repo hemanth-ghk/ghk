@@ -34,5 +34,5 @@ The dashboard features:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/hemanth-ghk/ghk/smart-city-dashboard.git
+   git clone https://github.com/hemanth-ghk/ghk.git
    cd smart-city-dashboard
