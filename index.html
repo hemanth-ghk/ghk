@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart City Dashboard — Live (Frontend)</title>
+
+  <!-- Tailwind quick (styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Leaflet for maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- leaflet.heat for heatmap -->
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-900 text-slate-100">
+
+  <header class="flex items-center justify-between p-4 bg-gradient-to-r from-sky-600 to-indigo-600">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="logo" class="h-8 w-8 object-contain" onerror="this.style.display='none'"/>
+      <h1 class="text-xl font-semibold">Smart City Dashboard</h1>
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="voiceBtn" class="flex items-center gap-2 px-3 py-1 bg-indigo-700 rounded hover:opacity-90">
+        <img src="assets/mic.png" alt="mic" class="h-5 w-5" onerror="this.style.display='none'"/>
+        Voice
+      </button>
+      <button id="simulateBtn" class="px-3 py-1 bg-amber-500 text-black rounded">Simulate</button>
+    </div>
+  </header>
+
+  <main class="p-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <!-- Summary -->
+    <section class="bg-slate-800 p-4 rounded-lg">
+      <h2 class="font-semibold text-lg mb-2">Summary</h2>
+      <div id="summary" class="text-sm space-y-2"></div>
+      <div class="mt-3 text-xs text-slate-300">
+        Last update: <span id="lastUpdate">—</span>
+      </div>
+    </section>
+
+    <!-- Traffic Chart -->
+    <section class="bg-slate-800 p-4 rounded-lg">
+      <h2 class="font-semibold text-lg mb-2">Traffic Trend</h2>
+      <canvas id="trafficChart" height="180"></canvas>
+    </section>
+
+    <!-- Pollution Chart -->
+    <section class="bg-slate-800 p-4 rounded-lg">
+      <h2 class="font-semibold text-lg mb-2">Pollution Breakdown</h2>
+      <canvas id="pollutionChart" height="180"></canvas>
+    </section>
+
+    <!-- Map -->
+    <section class="bg-slate-800 p-4 rounded-lg lg:col-span-3">
+      <h2 class="font-semibold text-lg mb-2">City Map</h2>
+      <div id="map" style="height:420px;" class="rounded"></div>
+    </section>
+
+    <!-- Events -->
+    <section class="bg-slate-800 p-4 rounded-lg lg:col-span-3">
+      <h2 class="font-semibold text-lg mb-2">Live Events</h2>
+      <ul id="events" class="list-disc pl-5 space-y-1 text-sm"></ul>
+    </section>
+  </main>
+
+  <!-- alert container (created by JS) -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>
